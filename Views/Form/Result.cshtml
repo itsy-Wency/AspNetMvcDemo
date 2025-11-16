@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Result";
+}
+<!-- FLOATING BACKGROUND SHAPES -->
+<div class="blob"></div>
+
+<div class="sphere" style="top: 10%; left: 20%; width: 80px; height:80px;"></div>
+<div class="sphere" style="top: 70%; left: 10%;"></div>
+<div class="sphere" style="top: 20%; right: 15%;"></div>
+<div class="sphere" style="bottom: 10%; right: 25%; width: 90px; height: 90px;"></div>
+<div class="main-container">
+
+    <h2>Submission Result</h2>
+
+    <div class="result-box">
+        <p><span class="label">Name:</span> <strong>@ViewBag.Name</strong></p>
+        <p><span class="label">Age:</span> <strong>@ViewBag.Age</strong></p>
+        <p><span class="label">Favorite Language:</span> <strong>@ViewBag.Language</strong></p>
+    </div>
+
+    <a asp-action="Index" class="btn-purple" style="display:block; margin-top:20px; text-align:center;">
+        Back to Form
+    </a>
+</div>

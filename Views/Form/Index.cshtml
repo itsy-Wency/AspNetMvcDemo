@@ -1,0 +1,50 @@
+@model AspNetMvcDemo.Models.FormModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!-- FLOATING BACKGROUND SHAPES -->
+<div class="blob"></div>
+
+<div class="sphere" style="top: 10%; left: 20%; width: 80px; height:80px;"></div>
+<div class="sphere" style="top: 70%; left: 10%;"></div>
+<div class="sphere" style="top: 20%; right: 15%;"></div>
+<div class="sphere" style="bottom: 10%; right: 25%; width: 90px; height: 90px;"></div>
+
+<!-- MAIN LOGIN CARD -->
+<div class="main-container">
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-action="Submit" method="post">
+        @Html.AntiForgeryToken()
+
+        <div>
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="input-control" placeholder="Enter name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Age"></label>
+            <input asp-for="Age" type="number" class="input-control" placeholder="Enter age" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="FavoriteLanguage"></label>
+            <select asp-for="FavoriteLanguage" class="input-control">
+                <option value="">Select...</option>
+                <option value="C#">C#</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-purple">Submit</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
